@@ -1,24 +1,16 @@
 <idea-plugin>
     <id>com.github.viral1010.tesbointellijplugin</id>
-    <name>Tesbo-Intellij-Plugin</name>
+    <name>Tesbo</name>
     <vendor>viral1010</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
-
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.viral1010.tesbointellijplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.viral1010.tesbointellijplugin.services.MyProjectService"/>
-    </extensions>
-
-    <applicationListeners>
-        <listener class="com.github.viral1010.tesbointellijplugin.listeners.MyProjectManagerListener"
-                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
-    </applicationListeners>
-
-    <extensions defaultExtensionNs="com.intellij">
-        <fileType name="Test File" implementationClass="TesboFileType"
+        <fileType name="test file" implementationClass="TestFileType"
                   fieldName="INSTANCE" language="Tesbo" extensions="tests"/>
     </extensions>
+
+
+
 </idea-plugin>
